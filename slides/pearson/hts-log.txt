@@ -1,0 +1,15 @@
+HTTrack3.49-2 launched on Sat, 14 Mar 2020 19:22:02 at https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pearson/
+(httrack https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pearson/ )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+19:22:04	Warning: 	Note: due to https://www.cs.princeton.edu remote robots.txt rules, links beginning with these path will be forbidden: /includes/, /misc/, /modules/, /profiles/, /scripts/, /themes/, /CHANGELOG.txt, /cron.php, /INSTALL.mysql.txt, /INSTALL.pgsql.txt, /INSTALL.sqlite.txt, /install.php, /INSTALL.txt, /LICENSE.txt, /MAINTAINERS.txt, /update.php, /UPGRADE.txt, /xmlrpc.php, /admin/, /comment/reply/, /filter/tips/, /node/add/, /search/, /user/register/, /user/password/, /user/login/, /user/logout/, /?q=admin/, /?q=comment/reply/, /?q=filter/tips/, /?q=node/add/, /?q=search/, /?q=user/password/, /?q=user/register/, /?q=user/login/, /?q=user/logout/ (see in the options to disable this)
+19:23:15	Error: 	"Not Found" (404) at link https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pearson/04HuffmanCodes.pdf (from https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pearson/)
+19:23:15	Error: 	"Not Found" (404) at link https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pearson/07MaximumFlowAppications.pdf (from https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pearson/)
+19:23:15	Error: 	"Not Found" (404) at link https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pearson/08NPCompleteness.pdf (from https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pearson/)
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 minutes 14 seconds : 49 links scanned, 45 files written (60711113 bytes overall) [60735043 bytes received at 820743 bytes/sec], 2.4 requests per connection
+(3 errors, 1 warnings, 0 messages)

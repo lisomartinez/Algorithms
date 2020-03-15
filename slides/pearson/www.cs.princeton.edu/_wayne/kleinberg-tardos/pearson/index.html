@@ -1,0 +1,365 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en">
+
+
+<!-- Mirrored from www.cs.princeton.edu/~wayne/kleinberg-tardos/pearson/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Mar 2020 22:22:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+<link rel="icon"          href="https://www.cs.princeton.edu/~wayne/kleinberg-tardos/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.cs.princeton.edu/~wayne/kleinberg-tardos/favicon.ico" type="image/x-icon">
+<link rel="stylesheet"    href="kleinberg-tardos.css"   type="text/css" media="screen">
+
+<!-- IE HACKS -->
+<!--[if IE]>
+<style type="text/css" media="screen">
+ #menu ul li {float: left; width: 100%;}
+</style>
+<![endif]-->
+<!--[if lt IE 7]>
+<style type="text/css" media="screen">
+body {
+behavior: url(/csshover.htc);
+} 
+#menu ul li {float: left; width: 100%;}
+#menu ul li a {height: 1%;} 
+
+#menu a, #menu h2 {
+font: bold 0.9em/1.5em arial, helvetica, sans-serif;
+} 
+
+</style>
+<![endif]-->
+
+
+
+<title>
+Lecture Slides for Algorithm Design By Jon Kleinberg And &#201va Tardos
+</title>
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8">
+<META NAME="AUTHOR" CONTENT="Kevin Wayne">
+<META NAME="KEYWORDS" CONTENT="Kevin Wayne,Eva,Tardos,Jon,Kleinberg,Algorithm,Design,Lecture,Slides,data,structures">
+<META NAME="DESCRIPTION" CONTENT="Lecture Slides for Algorithm Design by Jon Kleinberg and &#201;va Tardos">
+<META NAME="TITLE" CONTENT="Lecture Slides for Algorithm Design by Jon Kleinberg and &#201;va Tardos">
+<META NAME="ROBOTS" CONTENT="INDEX,FOLLOW">
+
+</head>
+
+
+<body>
+
+<div id = "menu">
+<div align="center">
+<a class = picture href="https://amzn.to/VjhioK">
+<img src="kleinberg-tardos.jpg" width=200 border=0 alt = "Algorithm Design by Jon Kleinberg and Eva Tardos">
+</a>  
+</div>
+
+
+
+
+<ul>
+  <li><a class = title href = "https://amzn.to/VjhioK">Algorithm Design</a>
+
+<ul>
+
+
+      <li> <a href = "01StableMatching.pdf">&nbsp;&nbsp;1.&nbsp;&nbsp;Representative Problems</a>
+        <ul>
+          <li> <a href = "01StableMatching.pdf">Stable Matching</a>
+          <li> <a href = "01StableMatching.pdf">Five Represenative Problems</a>
+        </ul>
+
+      <li> <a href = "02AlgorithmAnalysis.pdf">&nbsp;&nbsp;2.&nbsp;&nbsp;Algorithm Analysis</a>
+        <ul>
+          <li> <a href = "02AlgorithmAnalysis.pdf">Computational Tractability</a>
+          <li> <a href = "02AlgorithmAnalysis.pdf">Asymptotic Order of Growth</a>
+          <li> <a href = "02AlgorithmAnalysis.pdf">Common Running Times</a>
+        </ul>
+
+      <li> <a href = "03Graphs.pdf">&nbsp;&nbsp;3.&nbsp;&nbsp;Graphs</a>
+        <ul>
+          <li> <a href = "03Graphs.pdf">Basic Definition</a>
+          <li> <a href = "03Graphs.pdf">Connectivity and Traversal</a>
+          <li> <a href = "03Graphs.pdf">Implementing Graph Traversal</a>
+          <li> <a href = "03Graphs.pdf">Bipartiteness</a>
+          <li> <a href = "03Graphs.pdf">Connectivity in Digraphs</a>
+          <li> <a href = "03Graphs.pdf">Topological Order in DAGs</a>
+        </ul>
+
+      <li> <a href = "04GreedyAlgorithms.pdf">&nbsp;&nbsp;4.&nbsp;&nbsp;Greedy Algorithms</a>
+        <ul>
+          <li> <a href = "04GreedyAlgorithms.pdf">Coin Changing</a>
+          <li> <a href = "04GreedyAlgorithms.pdf">Interval Scheduling</a>
+          <li> <a href = "04GreedyAlgorithms.pdf">Interval Partitioning</a>
+          <li> <a href = "04GreedyAlgorithms.pdf">Minimizing Lateness</a>
+          <li> <a href = "04GreedyAlgorithms.pdf">Optimal Caching</a>
+          <li> <a href = "04GreedyAlgorithms.pdf">Shortest Paths in a Graph</a>
+          <li> <a href = "04MinimumSpanningTrees.pdf">Minimum Spanning Trees</a>
+          <li> <a href = "04MinimumSpanningTrees.pdf">Single-Link Clustering</a>
+          <li> <a href = "04HuffmanCodes.html">Huffman Codes</a>
+        </ul>
+
+      <li> <a href = "05DivideAndConquer.pdf">&nbsp;&nbsp;5.&nbsp;&nbsp;Divide and Conquer</a>
+        <ul>
+          <li> <a href = "05DivideAndConquer.pdf">Mergesort</a>
+          <li> <a href = "05DivideAndConquer.pdf">Counting Inversions</a>
+          <li> <a href = "05DivideAndConquer.pdf">Closest Pair of Points</a>
+          <li> <a href = "05Multiplication.pdf">Karatsuba's Algorithm</a>
+          <li> <a href = "05Multiplication.pdf">Convolution and FFT</a>
+        </ul>
+
+      <li> <a href = "06DynamicProgramming.pdf">&nbsp;&nbsp;6.&nbsp;&nbsp;Dynamic Programming</a>
+        <ul>
+          <li> <a href = "06DynamicProgramming.pdf">Weighted Interval Scheduling</a>
+          <li> <a href = "06DynamicProgramming.pdf">Segmented Least Squares</a>
+          <li> <a href = "06DynamicProgramming.pdf">Knapsack Problem</a>
+          <li> <a href = "06DynamicProgramming.pdf">RNA Secondary Structure</a>
+          <li> <a href = "06DynamicProgramming.pdf">Sequence Alignment</a>
+          <li> <a href = "06DynamicProgramming.pdf">Hirschberg's Algorithm</a>
+          <li> <a href = "06BellmanFord.pdf">Bellman-Ford Algorithm</a>
+          <li> <a href = "06BellmanFord.pdf">Distane Vector Protocol</a>
+          <li> <a href = "06BellmanFord.pdf">Negative Cycles</a>
+        </ul>
+
+      <li> <a href = "07MaximumFlow.pdf">&nbsp;&nbsp;7.&nbsp;&nbsp;Network Flow</a>
+        <ul>
+          <li> <a href = "07MaximumFlow.pdf">Max-Flow and Min-Cut</a>
+          <li> <a href = "07MaximumFlow.pdf">Ford-Fulkerson Algorithm</a>
+          <li> <a href = "07MaximumFlow.pdf">Capacity-Scaling</a>
+          <li> <a href = "07MaximumFlowAppications.html">Bipartite Matching</a>
+          <li> <a href = "07MaximumFlowAppications.html">Disjoint Paths</a>
+          <li> <a href = "07MaximumFlowAppications.html">Demands and Lower Bounds</a>
+          <li> <a href = "07MaximumFlowAppications.html">Survey Design</a>
+          <li> <a href = "07MaximumFlowAppications.html">Airline Scheduling</a>
+          <li> <a href = "07MaximumFlowAppications.html">Image Segmentation</a>
+          <li> <a href = "07MaximumFlowAppications.html">Project Selection</a>
+          <li> <a href = "07MaximumFlowAppications.html">Baseball Elimination</a>
+          <li> <a href = "07AssignmentProblem.pdf">Assignment Problem</a>
+        </ul>
+
+      <li> <a href = "08Intractability.pdf">&nbsp;&nbsp;8.&nbsp;&nbsp;Intractability</a>
+        <ul>
+          <li> <a href = "08Intractability.pdf">Polynomial-Time Reductions</a>
+          <li> <a href = "08Intractability.pdf">Vertex Cover</a>
+          <li> <a href = "08Intractability.pdf">Independent Set</a>
+          <li> <a href = "08Intractability.pdf">Set Cover</a>
+          <li> <a href = "08Intractability.pdf">3-Satisfiability</a>
+          <li> <a href = "08PolynomialTimeReductions.pdf">Hamiltonian Cycle</a>
+          <li> <a href = "08PolynomialTimeReductions.pdf">3-Dimensional Matching</a>
+          <li> <a href = "08PolynomialTimeReductions.pdf">Graph 3-Colorability</a>
+          <li> <a href = "08PolynomialTimeReductions.pdf">Subset Sum</a>
+          <li> <a href = "08NPCompleteness.html">P vs. NP</a>
+          <li> <a href = "08NPCompleteness.html">NP-Completeness</a>
+          <li> <a href = "08NPCompleteness.html">co-NP</a>
+        </ul>
+
+      <li> <a href = "09PSPACE.pdf">&nbsp;&nbsp;9.&nbsp;&nbsp;PSPACE</a>
+        <ul>
+          <li> <a href = "09PSPACE.pdf">PSPACE</a>
+          <li> <a href = "09PSPACE.pdf">Quantified SAT</a>
+          <li> <a href = "09PSPACE.pdf">Planning Problem</a>
+          <li> <a href = "09PSPACE.pdf">PSPACE-Complete</a>
+        </ul>
+
+      <li> <a href = "10ExtendingTractability.pdf">10.&nbsp;&nbsp;Limits of Tractability</a>
+        <ul>
+          <li> <a href = "10ExtendingTractability.pdf">Small Vertex Covers</a>
+          <li> <a href = "10ExtendingTractability.pdf">NP-Hard Problems on Trees</a>
+          <li> <a href = "10ExtendingTractability.pdf">Circular Arc Coloring</a>
+        </ul>
+
+      <li> <a href = "11ApproximationAlgorithms.pdf">11.&nbsp;&nbsp;Approximation Algorithms</a>
+        <ul>
+          <li> <a href = "11ApproximationAlgorithms.pdf">Load Balancing</a>
+          <li> <a href = "11ApproximationAlgorithms.pdf">Center Selection</a>
+          <li> <a href = "11ApproximationAlgorithms.pdf">Vertex Cover</a>
+          <li> <a href = "11ApproximationAlgorithms.pdf">Weighted Vertex Cover</a>
+          <li> <a href = "11ApproximationAlgorithms.pdf">Generalized Load Balancing</a>
+          <li> <a href = "11ApproximationAlgorithms.pdf">Knapsack Problem</a>
+        </ul>
+
+      <li> <a href = "12LocalSearch.pdf">12.&nbsp;&nbsp;Local Search</a>
+        <ul>
+          <li> <a href = "12LocalSearch.pdf">Gradient Descent</a>
+          <li> <a href = "12LocalSearch.pdf">Metropolis Algorithm</a>
+          <li> <a href = "12LocalSearch.pdf">Hopfield Neural Networks</a>
+          <li> <a href = "12LocalSearch.pdf">Maximum Cut</a>
+          <li> <a href = "12LocalSearch.pdf">Nash Equilibria</a>
+        </ul>
+
+      <li> <a href = "13RandomizedAlgorithms.pdf">13.&nbsp;&nbsp;Randomized Algorithms</a>
+        <ul>
+          <li> <a href = "13RandomizedAlgorithms.pdf">Contention Resolution</a>
+          <li> <a href = "13RandomizedAlgorithms.pdf">Global Min Cut</a>
+          <li> <a href = "13RandomizedAlgorithms.pdf">Linearity of Expectation</a>
+          <li> <a href = "13RandomizedAlgorithms.pdf">Max 3-SAT</a>
+          <li> <a href = "13RandomizedAlgorithms.pdf">Universal Hashing</a>
+          <li> <a href = "13RandomizedAlgorithms.pdf">Chernoff Bounds</a>
+          <li> <a href = "13RandomizedAlgorithms.pdf">Load Balancing</a>
+          <li> <a href = "13RandomizedAlgorithms.pdf">Randomized Quicksort</a>
+        </ul>
+    </ul>
+
+
+
+</ul>
+</div>
+
+
+<div id = "content">
+<h1 class = center>
+Lecture Slides for Algorithm Design
+</h1>
+
+<p><br>
+
+
+These are the offical lecture slides that accompany the textbook <em>Algorithm Design</em>
+[
+<a href="https://amzn.to/VjhioK">Amazon</a>
+&middot;
+<a href = "https://www.pearson.com/us/higher-education/program/Kleinberg-Algorithm-Design/PGM319216.html">Pearson</a>]
+by Jon Kleinberg and &#201;va Tardos.
+The slides were created by 
+<a href = "https://www.cs.princeton.edu/~wayne">Kevin Wayne</a> and are distributed by
+<a href = "https://www.pearson.com/us/higher-education/program/Kleinberg-Algorithm-Design/PGM319216.html">Pearson</a>.
+
+
+<!--
+<p>
+If you are an instructor using the textbook and would like the latest
+version of the ppt files, please email me.
+-->
+
+
+
+
+<p><br>
+
+<center>    
+<table cellspacing="1" cellpadding="5" border="0" bgcolor="#ffffff">
+
+<tr align=center>
+<th width=220>TOPIC</th>
+<th width=85>SLIDES</th>
+<th width=100>READINGS</th>
+<!-- <th width=220>DEMOS</th> -->
+</tr>
+
+
+
+
+<tr align=center bgcolor="#ebebeb">
+<td>Stable Matching</td>
+<td><a title = "Stable Matching lecture slides"  href="01StableMatching.pdf">1up</a> &middot; <a title = "Stable Matching lecture slides"  href="01StableMatching-2x2.pdf">4up</a></td>
+<td>1</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Algorithm Analysis</td>
+<td><a title = "Algorithm Analysis lecture slides"  href="02AlgorithmAnalysis.pdf">1up</a> &middot; <a title = "Algorithm Analysis lecture slides"  href="02AlgorithmAnalysis-2x2.pdf">4up</a></td>
+<td>2</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Graphs</td>
+<td><a title = "Graphs lecture slides"  href="03Graphs.pdf">1up</a> &middot; <a title = "Graphs lecture slides"  href="03Graphs-2x2.pdf">4up</a></td>
+<td>3</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Greedy Algorithms</td>
+<td><a title = "Greedy Algorithms lecture slides"  href="04GreedyAlgorithms.pdf">1up</a> &middot; <a title = "Greedy Algorithms lecture slides"  href="04GreedyAlgorithms-2x2.pdf">4up</a></td>
+<td>4.1&ndash;4.4</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Minimum Spanning Trees</td>
+<td><a title = "Minimum Spanning Trees lecture slides"  href="04MinimumSpanningTrees.pdf">1up</a> &middot; <a title = "Minimum Spanning Trees lecture slides"  href="04MinimumSpanningTrees-2x2.pdf">4up</a></td>
+<td>4.5&ndash;4.7</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Huffman Codes &dagger;</td>
+<td><a title = "Huffman Codes &dagger; lecture slides"  href="04Huffman.pdf">1up</a> &middot; <a title = "Huffman Codes &dagger; lecture slides"  href="04Huffman-2x2.pdf">4up</a></td>
+<td>4.8</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Divide and Conquer</td>
+<td><a title = "Divide and Conquer lecture slides"  href="05DivideAndConquer.pdf">1up</a> &middot; <a title = "Divide and Conquer lecture slides"  href="05DivideAndConquer-2x2.pdf">4up</a></td>
+<td>5.1&ndash;5.4</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Multiplication</td>
+<td><a title = "Multiplication lecture slides"  href="05Multiplication.pdf">1up</a> &middot; <a title = "Multiplication lecture slides"  href="05Multiplication-2x2.pdf">4up</a></td>
+<td>5.5&ndash;5.6</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Dynamic Programming</td>
+<td><a title = "Dynamic Programming lecture slides"  href="06DynamicProgramming.pdf">1up</a> &middot; <a title = "Dynamic Programming lecture slides"  href="06DynamicProgramming-2x2.pdf">4up</a></td>
+<td>6.1&ndash;6.7</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Bellman-Ford</td>
+<td><a title = "Bellman-Ford lecture slides"  href="06BellmanFord.pdf">1up</a> &middot; <a title = "Bellman-Ford lecture slides"  href="06BellmanFord-2x2.pdf">4up</a></td>
+<td>6.8&ndash;6.10</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Maximum Flow and Minimum Cut</td>
+<td><a title = "Maximum Flow and Minimum Cut lecture slides"  href="07MaximumFlow.pdf">1up</a> &middot; <a title = "Maximum Flow and Minimum Cut lecture slides"  href="07MaximumFlow-2x2.pdf">4up</a></td>
+<td>7.1&ndash;7.3</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Maximum Flow Applications</td>
+<td><a title = "Maximum Flow Applications lecture slides"  href="07MaximumFlowApplications.pdf">1up</a> &middot; <a title = "Maximum Flow Applications lecture slides"  href="07MaximumFlowApplications-2x2.pdf">4up</a></td>
+<td>7.5&ndash;7.12</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Assignment Problem</td>
+<td><a title = "Assignment Problem lecture slides"  href="07AssignmentProblem.pdf">1up</a> &middot; <a title = "Assignment Problem lecture slides"  href="07AssignmentProblem-2x2.pdf">4up</a></td>
+<td>7.13</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Intractability</td>
+<td><a title = "Intractability lecture slides"  href="08Intractability.pdf">1up</a> &middot; <a title = "Intractability lecture slides"  href="08Intractability-2x2.pdf">4up</a></td>
+<td>8.1&ndash;8.2</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Polynomial-Time Reductions</td>
+<td><a title = "Polynomial-Time Reductions lecture slides"  href="08PolynomialTimeReductions.pdf">1up</a> &middot; <a title = "Polynomial-Time Reductions lecture slides"  href="08PolynomialTimeReductions-2x2.pdf">4up</a></td>
+<td>8.5&ndash;8.8, 8.10</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>NP-Completeness</td>
+<td><a title = "NP-Completeness lecture slides"  href="08NPComplete.pdf">1up</a> &middot; <a title = "NP-Completeness lecture slides"  href="08NPComplete-2x2.pdf">4up</a></td>
+<td>8.3&ndash;8.4, 8.9</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>PSPACE</td>
+<td><a title = "PSPACE lecture slides"  href="09PSPACE.pdf">1up</a> &middot; <a title = "PSPACE lecture slides"  href="09PSPACE-2x2.pdf">4up</a></td>
+<td>9</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Extending Limits of Tractability</td>
+<td><a title = "Extending Limits of Tractability lecture slides"  href="10ExtendingTractability.pdf">1up</a> &middot; <a title = "Extending Limits of Tractability lecture slides"  href="10ExtendingTractability-2x2.pdf">4up</a></td>
+<td>10</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Approximation Algorithms</td>
+<td><a title = "Approximation Algorithms lecture slides"  href="11ApproximationAlgorithms.pdf">1up</a> &middot; <a title = "Approximation Algorithms lecture slides"  href="11ApproximationAlgorithms-2x2.pdf">4up</a></td>
+<td>11</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Local Search</td>
+<td><a title = "Local Search lecture slides"  href="12LocalSearch.pdf">1up</a> &middot; <a title = "Local Search lecture slides"  href="12LocalSearch-2x2.pdf">4up</a></td>
+<td>12</td></tr>
+
+<tr align=center bgcolor="#ebebeb">
+<td>Randomized Algorithms</td>
+<td><a title = "Randomized Algorithms lecture slides"  href="13RandomizedAlgorithms.pdf">1up</a> &middot; <a title = "Randomized Algorithms lecture slides"  href="13RandomizedAlgorithms-2x2.pdf">4up</a></td>
+<td>13</td></tr>
+
+
+</table>
+</center>
+
+<p><br>
+&dagger; Lecture slides provided by Mathijs de Weerd.
