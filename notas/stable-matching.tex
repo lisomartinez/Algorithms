@@ -1,3 +1,4 @@
+% chktex-file 46
 \documentclass[12pt, fleqn]{article}
 \usepackage{lipsum}
 \usepackage{geometry}
@@ -11,6 +12,7 @@
 \usepackage{setspace}
 \usepackage{minted}
 \usepackage{clrscode3e}
+\usepackage{xcolor}
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Claim}
@@ -51,25 +53,25 @@ se cumpla al menos una de los siguientes dos casos:
 \end{split}
 \]
 \begin{itemize}
-    \item \(M \times W \): conjunto de todos los posibles pares ordenados de la forma
-            \((m, w)\), donde \(m \in M\) y  \(w \in W\)
-    \item Matching \(S\): conjunto ordenado de pares de \(M \times W\) en el que cada
+    \item $M \times W $: conjunto de todos los posibles pares ordenados de la forma
+            $(m, w)$, donde $m \in M$ y  $w \in W$
+    \item Matching $S$: conjunto ordenado de pares de $M \times W$ en el que cada
              miembro de M y cada miembro de W aparece \emph{como mucho en un par de S}
-    \item Perfect Matching \(S'\): es un Matching en el que cada miembro de M y cada miembro 
-            de W aparecen \emph{exactamente en un par de \(S'\)}\\
+    \item Perfect Matching $S'$: es un Matching en el que cada miembro de M y cada miembro 
+            de W aparecen \emph{exactamente en un par de $S'$}\\
           Un perfect matching es una manera de sencilla de emparejar los hombres con las 
             mujeres, de modo tal que cada uno termine casado con alguien y nadie se case 
             con mas de una persona.
-    \item Preferences: cada \(m \in M\) establece un ranking de mujeres con las que
+    \item Preferences: cada $m \in M$ establece un ranking de mujeres con las que
             querria casarse en orden decreciente. 
-    \item Instability: Existen dos pares \(m,w\) y \(m', w'\) en \(S\) en los que 
-            \(m\) prefiere a \(w'\) por sobre \(w\) y \(w\) prefiere a \(m\) por sobre \(m'\).
-          En este caso no existiría nada que les impida a \(m\) y a \(w'\) abandonar a sus 
-          respectivas parejas y comprometerse entre ellos. El par \(m,w'\) es una
-           inestabilidad con respecto de \(S\), dado que no pertenece a S, 
-           pero \(m\) y a \(w'\) se prefieren entre si antes que a sus respectivas parejas.
-    \item Stable Matching: un matching es estable si \(i\) es perfecto y \(ii\) no existe
-            ninguna inestabilidad con respecto a \(S\). 
+    \item Instability: Existen dos pares $m,w$ y $m', w'$ en $S$ en los que 
+            $m$ prefiere a $w'$ por sobre $w$ y $w$ prefiere a $m$ por sobre $m'$.
+          En este caso no existiría nada que les impida a $m$ y a $w'$ abandonar a sus 
+          respectivas parejas y comprometerse entre ellos. El par $m,w'$ es una
+           inestabilidad con respecto de $S$, dado que no pertenece a S, 
+           pero $m$ y a $w'$ se prefieren entre si antes que a sus respectivas parejas.
+    \item Stable Matching: un matching es estable si $i$ es perfecto y $ii$ no existe
+            ninguna inestabilidad con respecto a $S$. 
             \emph{\textbf{Nota:} es posible que exista mas de un stable matching para una 
                 instancia del problema}         
 \end{itemize}
@@ -89,16 +91,16 @@ se cumpla al menos una de los siguientes dos casos:
     \item En algún momento de la ejecución del algoritmo algunos hombres y mujeres
             se encuentran comprometidos y otros solteros. El próximo paso consiste en:
             \begin{enumerate}
-                \item El hombre \(m\) le propone casamiento a la mujer que se encuentra
+                \item El hombre $m$ le propone casamiento a la mujer que se encuentra
                         primera en su lista de preferencias.
-                \item Si la mujer \(w\) esta soltera, acepta la proposición y se comprometen
-                        Si, por contraposición, la mujer \(w\) ya se encuentra comprometida
-                        con \(m'\) puede ocurrir una de las siguientes opciones:
+                \item Si la mujer $w$ esta soltera, acepta la proposición y se comprometen
+                        Si, por contraposición, la mujer $w$ ya se encuentra comprometida
+                        con $m'$ puede ocurrir una de las siguientes opciones:
                         \begin{enumerate}
-                            \item \(w\) prefiere a \(m'\) por sobre \(m\), \(w\) rechaza
-                                    a \(m\) y continúa comprometida con \(m'\).
-                            \item \(w\) prefiere a \(m\) por sobre \(m'\), \(w\) se
-                                    se compromete con \(m\) y \(m'\) queda soltero.        
+                            \item $w$ prefiere a $m'$ por sobre $m$, $w$ rechaza
+                                    a $m$ y continúa comprometida con $m'$.
+                            \item $w$ prefiere a $m$ por sobre $m'$, $w$ se
+                                    se compromete con $m$ y $m'$ queda soltero.        
                         \end{enumerate}
             \end{enumerate}
 \end{itemize}
@@ -120,14 +122,14 @@ se cumpla al menos una de los siguientes dos casos:
 \section{Análisis del algoritmo}
 \subsection{Demostración de la finalización del algoritmo}
 \begin{itemize}
-    \item (1,1): \(w\) permanece comprometida desde el momento en el que recibe la primera
-            propuesta. Solo cambia de pretendiente si \(m\) se encuentra en mejor 
-            posición que \(m'\) en su lista de preferencias.
-    \item (1,2): \(m\) le realiza propuestas de casamiento a las mujeres de su 
+    \item (1,1): $w$ permanece comprometida desde el momento en el que recibe la primera
+            propuesta. Solo cambia de pretendiente si $m$ se encuentra en mejor 
+            posición que $m'$ en su lista de preferencias.
+    \item (1,2): $m$ le realiza propuestas de casamiento a las mujeres de su 
             lista de preferencias de mejor a peor. 
 \end{itemize}
 \begin{definition}
-    El algoritmo G-S termina después de un máximo de \(n^2\) iteraciones del \emph{while}.
+    El algoritmo G-S termina después de un máximo de $n^2$ iteraciones del \emph{while}.
 \end{definition}
 \begin{proof}
     Se utiliza las proposiciones de matrimonio como medida de \emph{progreso}.

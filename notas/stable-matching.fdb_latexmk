@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1584273254 "/Users/liso/Documents/algorithms/notas/stable-matching.tex" "stable-matching.pdf" "stable-matching" 1584273255
-  "/Users/liso/Documents/algorithms/notas/stable-matching.tex" 1584230761 6303 5dbae2dd476936e8046895969da6fc83 ""
-  "/dev/null" 1584273239 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1584275632 "/Users/liso/Documents/algorithms/notas/stable-matching.tex" "stable-matching.pdf" "stable-matching" 1584275632
+  "/Users/liso/Documents/algorithms/notas/stable-matching.tex" 1584275629 6244 d5c64772f5e147da163f8dfd9fead41b ""
+  "/dev/null" 1584275602 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -110,9 +110,9 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1584040240 4259636 4a6eb654e78633987a96af4f409cd651 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "stable-matching.aux" 1584273255 910 0bab35dafe87bcbc9c66aadbf8031f88 "pdflatex"
-  "stable-matching.tex" 1584230761 6303 5dbae2dd476936e8046895969da6fc83 ""
+  "stable-matching.aux" 1584275632 910 0bab35dafe87bcbc9c66aadbf8031f88 "pdflatex"
+  "stable-matching.tex" 1584275629 6244 d5c64772f5e147da163f8dfd9fead41b ""
   (generated)
-  "stable-matching.pdf"
   "stable-matching.aux"
   "stable-matching.log"
+  "stable-matching.pdf"
