@@ -1,0 +1,187 @@
+% chktex-file 46
+\documentclass[12pt, fleqn]{article}
+\usepackage{lipsum}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{minted}
+\usepackage{clrscode3e}
+\usepackage{xcolor}
+\usepackage{tkz-graph}
+
+\geometry{a4paper, top=30mm, bottom=35mm, left=25mm, right=25mm}
+\onehalfspacing{}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\title{Graphs}
+\author{Lisandro Martinez}
+\date{\today}
+\begin{document}
+    \maketitle
+    \section{Conceptos}
+        \subsection{Grafo}
+            \begin{enumerate}
+                \item Se utilizan para modelar relaciones.
+                \item Grafo no dirigido (\emph{undirected graph}) $G = (V,E)$
+                \item $V$ = conjunto de nodos (modelan entidades)
+                \item $E$ = conjunto de pares de nodos (modelan relaciones)
+                \item Tamaño:
+                    \begin{enumerate}
+                        \item $n = |V|$ : Número de nodos.
+                        \item $m = |E|$ : Número de relaciones.
+                    \end{enumerate}
+                \item Grafo Completo: tiene todas las aristas posibles. \begin{displaymath}
+                    {n \choose 2} \in \mathcal{O}(n^2)
+                \end{displaymath}
+                \item nodos vecinos: nodos adyacentes.
+            \end{enumerate}
+        \subsection{Representación}
+            \subsubsection{Matriz de adyacencia}
+                \begin{itemize}
+                    \item Matriz de $n \times n$.
+                    \item $A_{uv} = 1$ si $(uv)$ es una arista.
+                    \item Es una matríz simétrica.
+                    \item No se puede tener una arista a sí mismo.
+                    \item Dos representaciones para cada arista.
+                    \item Espacio $N^2$.
+                    \item Verificar si una arista existe $\mathcal{O}(1)$. 
+                    \item Identificar si una arista existe $\mathcal{O}(N^2)$ (hay que revisar la mitad de la matríz).
+                \end{itemize}
+                Lo bueno es que se puede verificar rapidamente si existe una arista.\\
+                Lo malo es que ocupa mucho memoria
+            \subsubsection{Lista de adyacencia}
+                \begin{itemize}
+                    \item Por cada nodo se tiene una lista con las aristas.
+                    \item Dos representaciones por cada arista.
+                    \item Espacio proporcional a $m+n$.\\ 
+                        Si el grafo tiene muchas aristas, lo que va a dominar la cantidad de memoria va a depender de las aristas.
+                        En el caso contrario, está dominada por la cantidad de nodos. La complejidad la va a dominar la variable que crezca más rápido.
+                        Se necesita memoria proporcional al número de nodo.
+                    \item Verificar si existe una arista $(u,v)$ toma $\mathcal{O}(\deg(u))$\\
+                        Toma el grado del nodo, es decir, el número de aristas. Hay que recorrer toda la lista en el caso de que sea el último nodo.\\
+                        La cota superior es $\mathcal{O}(n)$
+                    \item Identificar todas las aristas toma $\Theta(m + n)$
+                \end{itemize}
+            \subsubsection{Utilizacion}
+            \begin{itemize}
+                \item Si el grafo es \emph{sparse} (disperso) tiene pocas aristas, la matríz de adyacencias consumiría mucho espacio.
+                \item trade-off memoria por procesamiento.
+            \end{itemize}
+    \section{Camino y Conectividad}
+    \subsection{Camino}
+        \begin{itemize}
+            \item Def: Un camino en una grafo dirigido es una secuencia P de nodos $v_1, v_2, v_2, \dots, v_{k-1}$
+            \begin{itemize}
+                \item Propiedad: para cualquier par $v_i, v_{i+1}$ adyacente en la secuencia debe haber una arista que los conecte.
+            \end{itemize} 
+            \item Camino Simple: todos los nodos son distintos. Se pasa una sola vez por cada nodo.
+            \item Ciclo: camino que nos regresa a un mismo lugar. 
+        \end{itemize} 
+    \subsection{Conectividad}
+        \begin{itemize}
+            \item Def. Un grafo no dirigio está \emph{conectado} si para cada par de nodos $u$ y $v$, existe una camino entre $u$ y $v$ que los une.
+        \end{itemize}
+    \section{Inducción matemática}
+        \begin{theorem}
+            Dados $S(n)$ y un predicado en $n \in - \mathbb{Z}^+$ Si:
+            \begin{enumerate}
+                \item $S(1)$ es verdadero
+                \item Para cualquiera $S(k)$ con $k \in - \mathbb{Z}^+$ arbitrario, entonces $S(k+1)$ es verdadero.
+            \end{enumerate}
+            Entonces, $S(n)$ es verdadero para todos $n \in - \mathbb{Z}^+$ 
+        \end{theorem}
+    \section{Árboles}
+        \subsection{Propiedades}
+            \begin{theorem}
+                Dado un grafo no dirigido $G$, las siguientes definiciones son equivalentes. La anterior implica la que sigue.
+                \begin{enumerate}
+                    \item $G$ es un árbol: está conectado y no contiene ciclos.\\ 
+                            \emph{Si un grafo está conectado y no contiene ciclos, se cumple la siguiente definición.}
+                    \item Cualquiera dos vértices en $G$ están conectados por un único camino simple. \\ 
+                            \emph{Tiene dos partes, la primera dice 
+                            que está conectada y la segunda que está conectada por un camino simple. Se supone que se niega que está conectada por un camino simple.
+                            Se encuentra conectado por más de un camino. Se debe llegar a que debe tener un ciclo. Tomando dos nodos $u$ y $v$ que están conectados
+                            por más de un camino $P$ y $P'$, se contradice con 1 (que dice que no tiene ciclos)}
+                    \item $G$ está conectado, pero si se remueve una arista de $E$, el grafo resultante está desconectado. 
+                    \\ \emph{Se supone que el grafo está conectado
+                        por un camino simple. Dados dos nosos $u$ y $v$ conectados por una arista. Si suponemos que caulquier para de nodos está conectado por un camino
+                        simple, no hay otra forma de llegar de $u$ a $v$. Si se remueve la arista, el grafo está desconectado.}
+                    \item $G$ está conectado y $|E| + 1 = |V| $. 
+                        \begin{proof}
+                            \begin{enumerate}
+                                \item inducción sobre el número de aristas.
+                                \item Si hay una sola arista, hay dos nodos (una arista más uno). Un nodo es igual a $0$ más uno.
+                                \item Hipótesis de inducción: se supone que el predicado es válido para $k$ aristas. El predicado es que la relación entre nodos y aristas
+                                    es  $|E| + 1 = |V| $. Se supone que está conectado y si se quita cualquier arista se desconecta el grafo.
+                                \item Se toma cualquier grafo de $k+1$ aristas. Por la Hipótesis se que si se quita una arista se desconecta y quedan
+                                    $G_1=(V_1, E_1)$ y  $G_2=(V_2, E_2)$ donde $ 0 \leq |E_1|, |E_2| \leq k$ Lo que queda de los dos lados debe tener
+                                    $k$ o menos de $k$ aristas.
+                                \item se aplica inducción fuerte.
+                                    \begin{align*}
+                                        |V| &= |V_1| + |V_2|\\
+                                        |V| &= (|E_1| + 1) + (|E_2| + 1)\\
+                                        |V| &= (|E_1| + |E_2| +1) + 1\\
+                                        |V| &= |E| + 1
+                                    \end{align*}
+                            \end{enumerate}
+                        \end{proof}
+                    \item $G$ es acíclico y $|E| + 1 = |V|$. \\ \emph{ Se niega que es acíclico. Se supone que es cíclico, que está conectado y hay
+                                que contradecir la relación entre nodos y arístas. Se supone que tiene un ciclo de longitud $k$, con $k$ nodos.
+                                El ciclo $G_k$ tiene $k$ nodos y $k$ aristas $G_k=(V_k, E_k), |V_k| = |E_k| $. Que el grafo sea conectado quiere decir que
+                                desde cualquier nodo puedo llegar a cualquier otro. Se procede agregando un nodo al grafo, creando el grafo
+                                $G_{k+1} = (V_{k+1}, E_{k+1}), |V_{k+1}| = |E_{k+1}| $. Cada vez que se añade un nodo se añade una arista.
+                                Se puede seguir haciendo hasta que $V{k+n} = V$, de modo que $|V| = |E|$, contradiciendo la Hipótesis. Para demostrarlo fue clave
+                                que en un ciclo el número de nodos es igual al número de aristas }
+                    \item $G$ es acíclico, pero si se agrega una arista a $E$, el grafo resultante contiene un ciclo. \\ \emph{Primero se intenta demostrarlo
+                                que $|E| +1 = |V|$ implica que el grafo está conectado. Si se le agrega una arista, se tiene que formar un ciclo. Se supone que existen
+                                un montón de pedazos que no están conectados $G_1 \dots G_k$, en los que se cumple la relación entre nodos y aristas.\\
+                                $G_1 \cup \cdots \cup G_k$ \\ 
+                                $(|E_1| +1) + \cdots + (|E_k| +1) = |V_1| +\cdots+ |v_k| $\\
+                                $|E_1| \cdots |E_k| + k = |V|$ \\
+                                $|E| + k = |V|$ \\
+                                $k = S$  }
+                \end{enumerate}
+            \end{theorem}
+        \subsection{Definiciones}
+            \begin{itemize}
+                \item Árbol enraizado \emph{(Rooted Tree)}: Dado un árbol $T$, se escoge un nodo raíz $r$. Al darle una raíz se induce una estructura jerárquica.
+                    Existe un padre, hijo, hermanos, ancestros y descendientes, hojas.
+            \end{itemize}
+    \section{Conectividad}
+        \begin{enumerate}
+            \item problema de conectividad: Dados dos nodos $s$ y $t$ se desea saber si existe un camino entre $s$ y $t$.
+            \item problema del camino más corto: Dados dos nodos $s$ y $t$ se desea saber cuál es el largo del camino más corto entre $s$ y $t$.
+        \end{enumerate}
+        \subsection{Algoritmos}
+        \begin{itemize}
+            \item BFS (búsqueda en amplitud): se comienza en un nodo $s$ y se explora en todas las direcciones posibles, 
+                agregando nodos de adyacentes de la siguiente capa.
+            \item Descripción
+                \begin{itemize}
+                    \item $L_0 = \{s\}$
+                    \item $L_1$ = todos los vecinos de la capa $L_0$
+                    \item $L_2$ = todos los nodos que no pertenecen a las capas $L_0$ o $L_1$ (que no han sido visitados) 
+                        y que tienen una arista con un nodo en la capa $L_1$
+                    \item $L_{i+1}$ = todos los nodos que no pertenecen a una capa anterior (no hayan sido visitados) 
+                        y que tienen una arista con un nodo en la capa $L_i$
+                    \item 
+                \end{itemize}
+                \begin{theorem}
+                    Para cada capa $j$, todos los nodos que estén en la capa $L_j$ están a la distancia exactamente $j$ de $s$. 
+                    (se puede usar para calcular el camino más corto)
+                \end{theorem}
+                \begin{theorem}
+                    Existe un camino desde $s$ hasta $t$ si y solo si $t$ aparece en alguna capa.
+                \end{theorem}
+            \item Propiedad: Dado un árbol BFS $T$ del grafo $G = (V, E)$(se añaden las aristas cuando se visita el nodo por primera vez. 
+                La búsqueda por amplitud lo que hace es podar aristas.). Sean $(x,y)$ parte de $G$, los niveles de $x$ y $x$ difieren como mucho en 1.
+                Es decir, o quedan en la misma capa o quedan en capas adyacentes.
+        \end{itemize}
+\end{document}

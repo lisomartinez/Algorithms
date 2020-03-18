@@ -14,27 +14,27 @@
 \usepackage{clrscode3e}
 \usepackage{xcolor}
 
+\geometry{a4paper, top=30mm, bottom=35mm, left=25mm, right=25mm}
+\onehalfspacing{}
+
 \theoremstyle{remark}
 \newtheorem*{remark}{Claim}
 
 \theoremstyle{definition}
 \newtheorem*{definition}{Claim}
 
-\geometry{a4paper, top=30mm, bottom=35mm, left=25mm, right=25mm}
-\onehalfspacing{}
 \title{Stable Matching}
 \author{Lisandro Martinez}
 \date{\today}
-%\renewcommand{\baselinestretch}{1.5}
+
 \begin{document}
 \maketitle{}
-HOLA
 \section{Problema}
-Gale-Shapley: Dado un conjunto de preferencias entre empleadores y candidatos
-es posible asignar los candidatos a los empleadores de forma tal que para
-cada uno de los empleadores E y para cada candidato C que no se encuentra 
-contratado para trabajar en la empresa
-se cumpla al menos una de los siguientes dos casos:
+    Gale-Shapley: Dado un conjunto de preferencias entre empleadores y candidatos
+    es posible asignar los candidatos a los empleadores de forma tal que para
+    cada uno de los empleadores E y para cada candidato C que no se encuentra 
+    contratado para trabajar en la empresa
+    se cumpla al menos una de los siguientes dos casos:
 \begin{enumerate}
     \item E prefiere a cada uno de los candidatos contratados en vez de C.
     \item C prefiere su actual situación antes que trabajar para E.
@@ -59,28 +59,33 @@ se cumpla al menos una de los siguientes dos casos:
              miembro de M y cada miembro de W aparece \emph{como mucho en un par de S}
     \item Perfect Matching $S'$: es un Matching en el que cada miembro de M y cada miembro 
             de W aparecen \emph{exactamente en un par de $S'$}\\
-          Un perfect matching es una manera de sencilla de emparejar los hombres con las 
+            Un perfect matching es una manera de sencilla de emparejar los hombres con las 
             mujeres, de modo tal que cada uno termine casado con alguien y nadie se case 
             con mas de una persona.
     \item Preferences: cada $m \in M$ establece un ranking de mujeres con las que
             querria casarse en orden decreciente. 
     \item Instability: Existen dos pares $m,w$ y $m', w'$ en $S$ en los que 
             $m$ prefiere a $w'$ por sobre $w$ y $w$ prefiere a $m$ por sobre $m'$.
-          En este caso no existiría nada que les impida a $m$ y a $w'$ abandonar a sus 
-          respectivas parejas y comprometerse entre ellos. El par $m,w'$ es una
-           inestabilidad con respecto de $S$, dado que no pertenece a S, 
-           pero $m$ y a $w'$ se prefieren entre si antes que a sus respectivas parejas.
+            En este caso no existiría nada que les impida a $m$ y a $w'$ abandonar a sus 
+            respectivas parejas y comprometerse entre ellos. El par $m,w'$ es una
+            inestabilidad con respecto de $S$, dado que no pertenece a S, 
+            pero $m$ y a $w'$ se prefieren entre si antes que a sus respectivas parejas.
     \item Stable Matching: un matching es estable si $i$ es perfecto y $ii$ no existe
             ninguna inestabilidad con respecto a $S$. 
             \emph{\textbf{Nota:} es posible que exista mas de un stable matching para una 
-                instancia del problema}         
+                instancia del problema} 
+    \item Valid partner: $w$ es un valid partner de $m$ si existe un stable matching que
+            contenga el par $((m,w))$
+    \item Best valid partnet: $w$ es valid partner de $m$ si $w$ es un valid partner 
+            de $m$ y no existe una mujer  que se encuentra por encima de $w$ en la lista
+            de preferencias y que sea un valid partner       
 \end{itemize}
-\section{Diseno del algoritmos}
+\section{Diseño del algoritmos}
 \begin{itemize}
     \item Existe un stable matching para cada conjunto de listas de preferencias entre
             hombres y mujeres.
     \item Es posible construir un algoritmo eficiente que toma como entrada 
-    la lista de preferencias y produce un stable matching.
+            la lista de preferencias y produce un stable matching.
 \end{itemize}
 \subsection{Observaciones}
 \begin{itemize}
@@ -120,7 +125,8 @@ se cumpla al menos una de los siguientes dos casos:
     }
 \end{verbatim}
 \section{Análisis del algoritmo}
-\subsection{Demostración de la finalización del algoritmo}
+\subsection{Demostraciones}
+\subsubsection{Demostración de la finalización del algoritmo}
 \begin{itemize}
     \item (1,1): $w$ permanece comprometida desde el momento en el que recibe la primera
             propuesta. Solo cambia de pretendiente si $m$ se encuentra en mejor 
@@ -133,5 +139,75 @@ se cumpla al menos una de los siguientes dos casos:
 \end{definition}
 \begin{proof}
     Se utiliza las proposiciones de matrimonio como medida de \emph{progreso}.
+\end{proof}
+\subsubsection{Demostración de perfección}
+    El conjunto $S$, resultado de la ejecucción del algoritmo, es un perfect matching
+    Hay que demostrar que ningún hombre puede terminar soltero al finalizar la ejecucción
+    del algoritmo, dado que la única forma de salir del \emph{While} es que no hayan
+    quedo hombres solteros. En ese caso, el conjunto de parejas es un perfect matching.
+\begin{definition}
+    \textbf{(1,4)} Si $m$ es un hombre soltero en algún momento de la ejecucción del algoritmo,
+    entonces existe una mujer $m$ a la que no le ha propuesto matrimonio.
+\begin{proof}
+    (by contradiction) Existe un punto de la ejecucción del algoritmo en el que
+    $m$ le ha propuesto matrimonio a todas las mujeres se encuentra soltero, 
+    Por \emph{(1,1)} todas las mujeres se encuentran comprometidas. Dado que el conjunto de 
+    pares forman un matching, deben existir $n$ hombres comprometidos en ese punto
+    de la ejecucción del algoritmo. Existen solo $n$ hombres en total y $m$ no está
+    comprometido, contradiciéndose.
+\end{proof}
+\end{definition}
+\subsubsection{Demostración de $S$ como perfect matching}
+
+\begin{definition}
+    \textbf{(1,5)} El conjunto $S$, resultado de la ejeccución del algoritmo
+    es un perfect matching.
+\end{definition}
+\begin{proof}
+    El conjunto de pares siempre forman un matching. Suponiendo que el algoritmo termina
+    con un hombre soltero $m$, todos los hombres deben haberle propuesto matrimonio
+    a todas las mujeres, de otro modo no habría terminado la ejecucción del algoritmo.
+    Esto contradice \emph{(1,4)}, por el cual no puede existir un hombre soltero que no 
+    le haya propuesto matrimonio a todas las mujeres.
+\end{proof}
+\subsubsection{Demostracion de $S$ como stable matching}
+\begin{definition}
+    \textbf{(1,6)} Al finalizar el algoritmo el conjunto $S$ es un stable matching
+\end{definition}
+\begin{proof}
+  (by contradiction) Se asume que existe un inestabilidad con respecto a $S$.
+  Una inestabilidad dos pares $(m,w)$ y $(m',w')$ con las siguientes propiedades:
+  \begin{itemize}
+      \item $m$ prefiere a $m'$ a $w$
+      \item $w'$ prefiere a $m$ a $m'$ 
+  \end{itemize}
+   En la ejecucción del algoritmo que produjo S, la última proposición de matromonio
+   fue realizada a $w$. Si $m$ no le propuso casamiento a $w'$, $w$ está por encima de $w$
+   en la lista de preferencias de $m$ (contradiciendo que $m$ prefiere a $w'$).
+   Si le propuso matrimonio a $w'$, entonces $w'$ lo rechazó por $m''$.
+   Entonces, $m''=m$ es la pareja de $w'$ o $w'$ prefiere su pareja actual $m'$ a $m''$.
+   Cualquiera de las dos alternativas contradice la suposición de que $w'$ prefiere a $m$
+   en vez de a $m'$. Por lo tanto $S$ es un stable matching
+\end{proof}
+\begin{definition}
+   Dado un conjunto de pares ${(m, best(m)): m \in M}$, denominado $S^*$ 
+   Toda ejecucción del algoritmo Gale-Shapley devuelve un conjunto $S^*$
+\end{definition}
+Observaciones:
+\begin{proof}
+   (by contradiction) Supuesto una ejecucción $\mathcal{E}$ de G-S en la que se produce
+   el conjunto $S$ en el cual un hombre esta casado con una mujer que no es su best valid 
+   partner. Dado que los hombres le proponen casamiento a las mujeres en su lista de 
+   preferencias de mejor a peor, debe existir un hombre que fue rechazado por un 
+   valid partner durante la ejecucción.
+   Considerando el primer hombre rechazado por un valid partner $m$, debe ser debido
+   a que $w$ es best valid partner de $m$.
+   $\mathcal{E}$.\\
+   El rechazo de $w$ a $m$ puede haber ocurrido porque $m$ le propuso matrimonio
+   y fue rechazado por $w$ en favor de la pareja previa de $w$ o porque $w$
+   rompió su compromiso con $m$ en favor de $m'$. De cualquiera de los dos modos
+   $w$ permanece comprometida con un hombre distinto de $m$ que ella prefiere.
+   Dado que $w$ es un valid partner de $m$, existe un stable matching $S'$ en el que 
+   $(m,w)$ $m$ y $w$ se encuentran comprometidos.
 \end{proof}
 \end{document}
