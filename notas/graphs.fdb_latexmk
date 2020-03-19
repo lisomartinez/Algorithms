@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1584561364 "/Users/liso/Documents/Algorithms/notas/graphs.tex" "graphs.pdf" "graphs" 1584561365
-  "/Users/liso/Documents/Algorithms/notas/graphs.tex" 1584561361 12230 4b93422227a175350a07912ec7b5ca5d ""
-  "/dev/null" 1584561322 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1584645281 "/Users/liso/Documents/algorithms/notas/graphs.tex" "graphs.pdf" "graphs" 1584645296
+  "/Users/liso/Documents/algorithms/notas/graphs.tex" 1584645294 16449 b715b5fae0c3d9b6ea8233f63c8254f2 ""
+  "/dev/null" 1584645292 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -167,6 +167,7 @@
   "/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty" 1203727794 274 4cad6e665cc93ac2ac979039a94fa1e1 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty" 1203877327 325 2bcd023400636339210573e2b3ee298b ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/setspace/setspace.sty" 1324344192 22913 a27d7908fc6f0385466454a966a316eb ""
+  "/usr/local/texlive/2019/texmf-dist/tex/latex/titlesec/titlesec.sty" 1458858524 37387 afa86533e532701faf233f3f592c61e0 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/tkz-graph/tkz-graph.sty" 1537478270 45714 f55535d6eeecc59ec4c95da68db48801 ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty" 1523050425 10212 357072c1d20578a30d6387d8a22e72ab ""
   "/usr/local/texlive/2019/texmf-dist/tex/latex/tools/shellesc.sty" 1523050425 3268 77605a04b5525f60d58f55c47c0771c5 ""
@@ -175,11 +176,11 @@
   "/usr/local/texlive/2019/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1417732693 4962 9c1069474ff71dbc47d5006555e352d3 ""
   "/usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1557092114 35484 cb1661360667bf4db662a8895053b554 ""
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
-  "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1557342086 4259635 562fc36ec496993777a6c428d8bfb811 ""
+  "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1584040240 4259636 4a6eb654e78633987a96af4f409cd651 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "graphs.aux" 1584561365 1610 1b3c2c37edde6356f0ff32f5e8f8f2aa "pdflatex"
-  "graphs.tex" 1584561361 12230 4b93422227a175350a07912ec7b5ca5d ""
+  "graphs.aux" 1584645282 2728 ddfe63a31621585f50fa006f65f3d808 "pdflatex"
+  "graphs.tex" 1584645294 16449 b715b5fae0c3d9b6ea8233f63c8254f2 ""
   (generated)
+  "graphs.pdf"
   "graphs.log"
   "graphs.aux"
-  "graphs.pdf"

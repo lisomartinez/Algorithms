@@ -14,9 +14,18 @@
 \usepackage{clrscode3e}
 \usepackage{xcolor}
 \usepackage{tkz-graph}
+\usepackage{titlesec}
 
 \geometry{a4paper, top=30mm, bottom=35mm, left=25mm, right=25mm}
 \onehalfspacing{}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 
 \newtheorem{theorem}{Theorem}[section]
 
@@ -159,29 +168,89 @@
             \item problema de conectividad: Dados dos nodos $s$ y $t$ se desea saber si existe un camino entre $s$ y $t$.
             \item problema del camino más corto: Dados dos nodos $s$ y $t$ se desea saber cuál es el largo del camino más corto entre $s$ y $t$.
         \end{enumerate}
+
         \subsection{Algoritmos}
-        \begin{itemize}
-            \item BFS (búsqueda en amplitud): se comienza en un nodo $s$ y se explora en todas las direcciones posibles, 
-                agregando nodos de adyacentes de la siguiente capa.
-            \item Descripción
+            \subsubsection{BFS - Búsqueda en amplitud}
                 \begin{itemize}
-                    \item $L_0 = \{s\}$
-                    \item $L_1$ = todos los vecinos de la capa $L_0$
-                    \item $L_2$ = todos los nodos que no pertenecen a las capas $L_0$ o $L_1$ (que no han sido visitados) 
-                        y que tienen una arista con un nodo en la capa $L_1$
-                    \item $L_{i+1}$ = todos los nodos que no pertenecen a una capa anterior (no hayan sido visitados) 
-                        y que tienen una arista con un nodo en la capa $L_i$
-                    \item 
+                    \item BFS (búsqueda en amplitud): se comienza en un nodo $s$ y se explora en todas las direcciones posibles, 
+                        agregando nodos de adyacentes de la siguiente capa.
+                    \item Descripción
+                        \begin{itemize}
+                            \item $L_0 = \{s\}$
+                            \item $L_1$ = todos los vecinos de la capa $L_0$
+                            \item $L_2$ = todos los nodos que no pertenecen a las capas $L_0$ o $L_1$ (que no han sido visitados) 
+                                y que tienen una arista con un nodo en la capa $L_1$
+                            \item $L_{i+1}$ = todos los nodos que no pertenecen a una capa anterior (no hayan sido visitados) 
+                                y que tienen una arista con un nodo en la capa $L_i$
+                            \item 
+                        \end{itemize}
+                        \begin{theorem}
+                            Para cada capa $j$, todos los nodos que estén en la capa $L_j$ están a la distancia exactamente $j$ de $s$. 
+                            (se puede usar para calcular el camino más corto)
+                        \end{theorem}
+                        \begin{theorem}
+                            Existe un camino desde $s$ hasta $t$ si y solo si $t$ aparece en alguna capa.
+                        \end{theorem}
+                    \item Propiedad: Dado un árbol BFS $T$ del grafo $G = (V, E)$(se añaden las aristas cuando se visita el nodo por primera vez. 
+                        La búsqueda por amplitud lo que hace es podar aristas.). Sean $(x,y)$ parte de $G$, los niveles de $x$ y $x$ difieren como mucho en 1.
+                        Es decir, o quedan en la misma capa o quedan en capas adyacentes.
                 \end{itemize}
-                \begin{theorem}
-                    Para cada capa $j$, todos los nodos que estén en la capa $L_j$ están a la distancia exactamente $j$ de $s$. 
-                    (se puede usar para calcular el camino más corto)
-                \end{theorem}
-                \begin{theorem}
-                    Existe un camino desde $s$ hasta $t$ si y solo si $t$ aparece en alguna capa.
-                \end{theorem}
-            \item Propiedad: Dado un árbol BFS $T$ del grafo $G = (V, E)$(se añaden las aristas cuando se visita el nodo por primera vez. 
-                La búsqueda por amplitud lo que hace es podar aristas.). Sean $(x,y)$ parte de $G$, los niveles de $x$ y $x$ difieren como mucho en 1.
-                Es decir, o quedan en la misma capa o quedan en capas adyacentes.
-        \end{itemize}
+        \subsection{Componentes conectados}
+            \subsubsection{Definición}    
+                Def. Encontrar todos los nodos alcanzables desde $s$.
+            \subsubsection{Algoritmo}
+                \begin{enumerate}
+                    \item Se desea detectar el componente conectado partiendo de un nodo arbitrario $s$.
+                    \item $R$ consiste en todos los nodos hacia los cuales $s$ tiene un camino.
+                    \item Inicialmente $R = \{s\}$
+                    \item Mientras haya una arista, tal que un nodo esté adentro $u \in R$ y otro esté afuera $v \notin R$,
+                        vamos a visitar ese nodo, agregándolo al componente conectado.
+                \end{enumerate}    
+            \begin{theorem}
+                Una vez que el algoritmo termina, $R$ es el componente conectado que contiene $s$
+            \end{theorem}
+            \begin{proof}
+                (por contradicción)
+                \begin{itemize}
+                    \item  Para cualquier nodo $v \in R$, existe un camino desde cualquier otro nodo $\in R$.
+                    \item Dado un nodo $w \notin R$, se da por supuesto  que existe un camino $s-w$ $P$ en $G$.
+                    \item Debe existir un primero nodo $v \in P, v \notin R$
+                    \item Existe un nodo $u$ que precede inmediatamente a $v$ en $P$, de modo tal que $(u,v) \in E$
+                    \item $u \in R$, lo que contradice la condición de terminación.  
+                \end{itemize}
+            \end{proof}
+        \subsection{DFS - Búsqueda en Profundidad}
+            \subsubsection{Algoritmo}
+                \begin{enumerate}
+                    \item Marcar el nodo $u$ como visitado y agregar el nodo $u$ a la componente $R$.
+                    \item Para cada uno de las aristas $(u,v)$ incidentes al nodo $u$, 
+                        explorar recursivamente $v$ si no ha sido visitado.
+                \end{enumerate}
+            \subsection{Propiedades}
+                \subsubsection{Propiedad 1}
+                    Dada una llamada recursiva al nodo $u$, todos los nodos que son marcados como 
+                    visitados desde que llegue al nodo $u$, todos los nodos desde la invocación de la 
+                    llamada recursiva hasta su retorno van a ser sus descendientes en 
+                    el árbol de búsqueda en profundidad $T$.\\\\
+                    \emph{Se podan las aristas y se mantienen las aristas mínimas para conectar el gráfo,
+                    las cuales generan un árbol.}
+                    \begin{theorem}
+                        Sea $T$ un árbol de búsqueda en profundidad, $x,y \in T$ y $(x,y) \in E$,
+                        $(x,y) \in G$, $(x,y) \notin T$. Si me fijo en una arista que estaba en el grafo
+                        pero no apareció en el árbol de búsqueda, entonces debe ser cierto que alguno
+                        de los dos es el ancestro del otro.
+                    \end{theorem}
+                    \begin{proof}
+                        \begin{itemize}
+                            \item Se supone que el nodo $x$ es el primero que se visita.
+                            \item Cuándo $(x,y)$ es examinado, no se lo agrega a $T$ por que ya fue 
+                                visitado.
+                            \item Dado que $y$ no estaba marcado como visitado cuando se invocó por primera
+                                vez \emph{DFS(x)}, $y$ fue descubierto durante la invocación de \emph{DFS(X)}
+                                y el final de la llamada recursiva \emph{DFS(X)}.
+                        \end{itemize}
+                    \end{proof}
+    \section{Grafo bipartita}
+        \subsection{Definición}
+                    
 \end{document}

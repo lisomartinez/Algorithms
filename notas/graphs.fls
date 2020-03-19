@@ -1,8 +1,8 @@
-PWD /Users/liso/Documents/Algorithms/notas
+PWD /Users/liso/Documents/algorithms/notas
 INPUT /usr/local/texlive/2019/texmf.cnf
 INPUT /usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/liso/Documents/Algorithms/notas/graphs.tex
+INPUT /Users/liso/Documents/algorithms/notas/graphs.tex
 OUTPUT graphs.log
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
@@ -241,6 +241,8 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libr
 INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/titlesec/titlesec.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT graphs.aex
 INPUT graphs.aex
 INPUT graphs.aux
