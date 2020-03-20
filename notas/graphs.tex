@@ -1,4 +1,5 @@
 % chktex-file 46
+%in order to use minted, python's package pygmetize should be installed
 \documentclass[12pt, fleqn]{article}
 \usepackage{lipsum}
 \usepackage{geometry}
@@ -28,6 +29,10 @@
 
 
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
 
 \title{Graphs}
 \author{Lisandro Martinez}
@@ -252,5 +257,79 @@
                     \end{proof}
     \section{Grafo bipartita}
         \subsection{Definición}
-                    
+                    Es un grafo no dirigido la propiedad de que los nodos pueden ser coloreados de rojo o azul, de modo tal
+                    que cada arista tiene un nodo de color rojo y otro de color azul.\\
+                    Para ser bipartito tiene que ser dos colorable (se puede colorear con solo dos colores). Para que las
+                    aristas no sean monocromáticas los dos nodos que componen una arista deben tener un color distinto.
+        \subsection{Caracteristicas}
+                    Muchos problemas que involucran grafos se:
+                    \begin{itemize}
+                        \item vuelven más fáciles de entender si el grafo subyacente es bipartito (matching).
+                        \item tratables si el grafo subyacente es bipartito (independent set).
+                    \end{itemize}
+        \begin{lemma}
+            Si un grafo es bipartito, no puede contener un ciclo de tamaño impar.
+        \end{lemma}
+        \begin{proof}
+            No es posible dos colorear un ciclo de tamaño impar, sin que quede una arista monocromática.
+        \end{proof}
+        \begin{lemma}
+            Dado un grafo conectado $G$ y sean $L_0, \ldots, L_k$ las capas producidas por BFS al comenzar por
+            el nodo $s$, se debe cumplir uno y solo uno de los siguientes casos.
+            \begin{enumerate}
+                \item No existe una arista de $G$ que una dos nodos de la misma capa y, por lo tanto, G es bipartita.
+                \item Una arista de $G$ que une dos nodos de la misma capa y $G$ contiene un ciclo de tamaño impar. Por lo tanto,
+                    $G$ no es bipartito.
+            \end{enumerate}
+        \end{lemma}
+    \section{Grafos Dirigidos}
+        \subsection{Características}
+            \begin{itemize}
+                \item Los pares son pares ordenados: la arista $(u,v)$ va desde el nodo $u$ al nodo $v$.
+            \end{itemize}
+        \subsection{Componentes fuertemente conectados}
+            \begin{definition}
+                Los nodos $u$ y $v$ son mutuamente alcanzables si existe un camino desde $u$ hacia $v$ y otro que vaya
+                desde $v$ hasta $u$.
+            \end{definition}
+            \begin{definition}
+                Un grafo es fuertemente conectado si cada par de nodos es mutuamente alcanzable.
+            \end{definition}
+            \begin{lemma}
+                Sea $s$ cualquier nodo. $G$ es fuertemente conectado si y solo si cada uno de los nodos
+                es alcanzable desde $s$, y $s$ es alcanzable desde cada uno de los nodos.
+            \end{lemma}
+            \begin{proof}
+                Se sigue de la definición.
+            \end{proof}
+            \subsubsection{Algoritmo}
+                \begin{theorem}
+                    Se puede determinar si un grafo es fuertemente conectado en $\mathcal{O}(m+n)$.
+                \end{theorem}
+                \begin{proof}
+                    \begin{itemize}
+                        \item Se escoge un nodo arbitrario $s$.
+                        \item Se ejecuta BFS desde $s$ en $G$.
+                        \item Se ejecuta BFS desde $s$ en $G^{rev}$ (invirtiendo las flechas de las aristas).
+                        \item Si se alcanzan todos los nodos en ambas ejecuciones de BFS, devuelve \emph{verdadero}
+                    \end{itemize}
+                \end{proof}
+        \section{Grafo acíclico dirido}
+            \begin{definition}
+                Grafo dirigido que no contiene ciclos. 
+            \end{definition}
+            \begin{definition}
+                la arista $(v_i,v_j)$ significa que $v_i$ precede a $v_h$
+            \end{definition}
+            \begin{definition}
+                Un orden topológico de un grafo acíclico dirigido $G = (V,E)$ es un ordenamiento de sus
+                nodos $v_1, v_2, \ldots,v_n$ de modo tal que cada una de las aristas $(v_i, v_j)$ se cumple que
+                $i < j$.
+            \end{definition}
+            \begin{lemma}
+                Si $G$ tiene un orden topológico, $G$ es un grafo acíclico dirigido.
+            \end{lemma}
+            \begin{proof}
+                (por contradicción) 
+            \end{proof}
 \end{document}
